@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simula tu puntaje PAES 2025, calcula tu NEM y ranking, y planifica tu futuro académico con herramientas gratuitas y profesionales.">
+  <meta name="keywords" content="PAES, simulador, puntaje, universidad, Chile, admisión, NEM, ranking">
+  <title>SimuPAES - Simulador de Puntajes PAES 2025</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Skip Link para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <span class="logo-text">Simu<span>PAES</span></span>
+        </a>
+        
+        <!-- Navegación Principal -->
+        <nav class="nav-main" aria-label="Navegación principal">
+          <a href="simulador.html" class="nav-link">Simulador</a>
+          <a href="copiloto.html" class="nav-link">Copiloto</a>
+          
+          <!-- Dropdown Herramientas -->
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle">
+              Herramientas
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="herramientas.html#calculadora-nem" class="nav-dropdown-item">
+                <i class="fas fa-calculator"></i>
+                Calculadora NEM
+              </a>
+              <a href="herramientas.html#simulador-ranking" class="nav-dropdown-item">
+                <i class="fas fa-chart-line"></i>
+                Simulador Ranking
+              </a>
+              <a href="herramientas.html#universidades" class="nav-dropdown-item">
+                <i class="fas fa-university"></i>
+                Explorar Universidades
+              </a>
+              <a href="herramientas.html#carreras" class="nav-dropdown-item">
+                <i class="fas fa-search"></i>
+                Buscar Carreras
+              </a>
+            </div>
+          </div>
+          
+          <a href="planes.html" class="nav-link">Planes</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+        
+        <!-- Acciones Header -->
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-ghost">Iniciar Sesión</a>
+          <a href="register.html" class="btn btn-primary">Crear Cuenta</a>
+          
+          <!-- Botón Menú Móvil -->
+          <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ========== MENÚ MÓVIL ========== -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <span class="logo-text">Simu<span>PAES</span></span>
+      </a>
+      <button class="mobile-menu-close" id="menu-close" aria-label="Cerrar menú">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link is-active">
+        <i class="fas fa-home"></i>
+        Inicio
+      </a>
+      <a href="simulador.html" class="mobile-nav-link">
+        <i class="fas fa-calculator"></i>
+        Simulador de Puntajes
+      </a>
+      <a href="copiloto.html" class="mobile-nav-link">
+        <i class="fas fa-robot"></i>
+        Copiloto de Postulación
+      </a>
+      
+      <div class="mobile-nav-divider"></div>
+      
+      <a href="herramientas.html#calculadora-nem" class="mobile-nav-link">
+        <i class="fas fa-percentage"></i>
+        Calculadora NEM
+      </a>
+      <a href="herramientas.html#simulador-ranking" class="mobile-nav-link">
+        <i class="fas fa-chart-line"></i>
+        Simulador Ranking
+      </a>
+      <a href="herramientas.html#universidades" class="mobile-nav-link">
+        <i class="fas fa-university"></i>
+        Universidades
+      </a>
+      <a href="herramientas.html#carreras" class="mobile-nav-link">
+        <i class="fas fa-search"></i>
+        Buscar Carreras
+      </a>
+      
+      <div class="mobile-nav-divider"></div>
+      
+      <a href="planes.html" class="mobile-nav-link">
+        <i class="fas fa-crown"></i>
+        Planes
+      </a>
+      <a href="#faq" class="mobile-nav-link">
+        <i class="fas fa-question-circle"></i>
+        Preguntas Frecuentes
+      </a>
+    </nav>
+    
+    <div class="mobile-menu-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Iniciar Sesión</a>
+      <a href="register.html" class="btn btn-primary btn-block">Crear Cuenta Gratis</a>
+    </div>
+  </div>
+  
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="main-content">
+    
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i class="fas fa-star"></i>
+              <span>Proceso de Admisión 2025</span>
+            </div>
+            
+            <h1 class="hero-title">
+              Simula tu puntaje <span class="hero-title-highlight">PAES 2025</span> y planifica tu futuro
+            </h1>
+            
+            <p class="hero-description">
+              Herramientas gratuitas para calcular tu puntaje ponderado, comparar universidades y encontrar la carrera ideal. Más de 50.000 estudiantes ya confían en nosotros.
+            </p>
+            
+            <div class="hero-actions">
+              <a href="simulador.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-calculator"></i>
+                Simular Puntaje
+              </a>
+              <a href="copiloto.html" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.3); color: white;">
+                <i class="fas fa-compass"></i>
+                Explorar Copiloto
+              </a>
+            </div>
+            
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div class="hero-stat-value">50K+</div>
+                <div class="hero-stat-label">Usuarios activos</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">2,500+</div>
+                <div class="hero-stat-label">Carreras</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-value">60+</div>
+                <div class="hero-stat-label">Universidades</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hero Visual Card -->
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <span class="hero-card-dot red"></span>
+                <span class="hero-card-dot yellow"></span>
+                <span class="hero-card-dot green"></span>
+                <span class="hero-card-title">Simulador de Puntajes</span>
+              </div>
+              
+              <div class="hero-form-row">
+                <div class="hero-form-field">
+                  <span class="hero-form-label">NEM</span>
+                  <span class="hero-form-value">720</span>
+                </div>
+                <div class="hero-form-field">
+                  <span class="hero-form-label">Ranking</span>
+                  <span class="hero-form-value">780</span>
+                </div>
+              </div>
+              
+              <div class="hero-form-row">
+                <div class="hero-form-field">
+                  <span class="hero-form-label">Comp. Lectora</span>
+                  <span class="hero-form-value">850</span>
+                </div>
+                <div class="hero-form-field">
+                  <span class="hero-form-label">Matemática 1</span>
+                  <span class="hero-form-value">890</span>
+                </div>
+              </div>
+              
+              <div class="hero-result">
+                <div class="hero-result-label">Puntaje Ponderado Estimado</div>
+                <div class="hero-result-value">812</div>
+              </div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="hero-float hero-float-1">
+              <i class="fas fa-check-circle text-success" style="font-size: 24px;"></i>
+            </div>
+            <div class="hero-float hero-float-2">
+              <i class="fas fa-chart-line text-primary" style="font-size: 24px;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="section" id="herramientas">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Herramientas para tu éxito</h2>
+          <p class="section-subtitle">
+            Todo lo que necesitas para planificar tu ingreso a la universidad, en un solo lugar.
+          </p>
+        </div>
+        
+        <div class="features-grid">
+          <!-- Simulador PAES -->
+          <div class="feature-card">
+            <div class="feature-icon feature-icon-primary">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <h3 class="feature-title">Simulador PAES</h3>
+            <p class="feature-description">
+              Calcula tu puntaje ponderado ingresando tus notas y resultados PAES. Compara con puntajes de corte históricos.
+            </p>
+            <a href="simulador.html" class="feature-link">
+              Ir al simulador <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <!-- Copiloto -->
+          <div class="feature-card">
+            <div class="feature-icon feature-icon-secondary">
+              <i class="fas fa-compass"></i>
+            </div>
+            <h3 class="feature-title">Copiloto de Postulación</h3>
+            <p class="feature-description">
+              Recibe recomendaciones personalizadas de carreras basadas en tus intereses, puntajes y ubicación geográfica.
+            </p>
+            <a href="copiloto.html" class="feature-link">
+              Explorar copiloto <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <!-- Calculadora NEM -->
+          <div class="feature-card">
+            <div class="feature-icon feature-icon-accent">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <h3 class="feature-title">Calculadora NEM</h3>
+            <p class="feature-description">
+              Convierte tu promedio de notas al puntaje NEM oficial usando las tablas actualizadas del DEMRE.
+            </p>
+            <a href="herramientas.html#calculadora-nem" class="feature-link">
+              Calcular NEM <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <!-- Simulador Ranking -->
+          <div class="feature-card">
+            <div class="feature-icon feature-icon-purple">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Simulador Ranking</h3>
+            <p class="feature-description">
+              Estima tu puntaje ranking comparando tu rendimiento con el promedio histórico de tu establecimiento.
+            </p>
+            <a href="herramientas.html#simulador-ranking" class="feature-link">
+              Calcular ranking <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <!-- Universidades -->
+          <div class="feature-card">
+            <div class="feature-icon feature-icon-pink">
+              <i class="fas fa-university"></i>
+            </div>
+            <h3 class="feature-title">Explorar Universidades</h3>
+            <p class="feature-description">
+              Descubre todas las universidades del sistema, filtra por región y conoce sus puntajes de corte.
+            </p>
+            <a href="herramientas.html#universidades" class="feature-link">
+              Ver universidades <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <!-- Buscador de Carreras -->
+          <div class="feature-card">
+            <div class="feature-icon feature-icon-primary">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 class="feature-title">Buscador de Carreras</h3>
+            <p class="feature-description">
+              Busca entre más de 2.500 carreras. Filtra por área, puntaje, ubicación y más criterios.
+            </p>
+            <a href="herramientas.html#carreras" class="feature-link">
+              Buscar carreras <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ========== FECHAS IMPORTANTES ========== -->
+    <section class="section section-gray" id="fechas">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Fechas Importantes 2025</h2>
+          <p class="section-subtitle">
+            No te pierdas ninguna fecha clave del proceso de admisión universitaria.
+          </p>
+        </div>
+        
+        <div class="timeline-cards">
+          <div class="timeline-card">
+            <div class="timeline-card-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <div class="timeline-card-date">2-3</div>
+            <div class="timeline-card-month">Diciembre 2024</div>
+            <div class="timeline-card-title">Rendición PAES</div>
+          </div>
+          
+          <div class="timeline-card">
+            <div class="timeline-card-icon">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="timeline-card-date">6</div>
+            <div class="timeline-card-month">Enero 2025</div>
+            <div class="timeline-card-title">Publicación Resultados</div>
+          </div>
+          
+          <div class="timeline-card">
+            <div class="timeline-card-icon">
+              <i class="fas fa-paper-plane"></i>
+            </div>
+            <div class="timeline-card-date">7-10</div>
+            <div class="timeline-card-month">Enero 2025</div>
+            <div class="timeline-card-title">Postulaciones</div>
+          </div>
+          
+          <div class="timeline-card">
+            <div class="timeline-card-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="timeline-card-date">20</div>
+            <div class="timeline-card-month">Enero 2025</div>
+            <div class="timeline-card-title">Resultados Selección</div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-outline">
+            <i class="fas fa-calendar-alt"></i>
+            Ver calendario completo
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ========== PLANES / PRICING ========== -->
+    <section class="section" id="planes">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Elige tu plan</h2>
+          <p class="section-subtitle">
+            Comienza gratis y actualiza cuando lo necesites. Sin compromisos.
+          </p>
+        </div>
+        
+        <div class="pricing-grid">
+          <!-- Plan Gratis -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-name">Gratis</h3>
+              <div class="pricing-price">
+                <span class="pricing-currency">$</span>
+                <span class="pricing-amount">0</span>
+              </div>
+              <p class="pricing-description">
+                Perfecto para comenzar a explorar tus opciones.
+              </p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Simulador de puntajes básico</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Calculadora NEM y Ranking</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Búsqueda de carreras limitada</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>3 simulaciones por mes</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Copiloto de postulación</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Historial de simulaciones</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Exportar resultados</span>
+              </li>
+            </ul>
+            
+            <a href="register.html" class="btn btn-secondary btn-block">
+              Comenzar Gratis
+            </a>
+          </div>
+          
+          <!-- Plan PRO -->
+          <div class="pricing-card is-featured">
+            <div class="pricing-header">
+              <h3 class="pricing-name">PRO</h3>
+              <div class="pricing-price">
+                <span class="pricing-currency">$</span>
+                <span class="pricing-amount">9.990</span>
+                <span class="pricing-period">/ mes</span>
+              </div>
+              <p class="pricing-description">
+                Todas las herramientas para maximizar tus opciones.
+              </p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Simulador de puntajes avanzado</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Calculadora NEM y Ranking</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Búsqueda ilimitada de carreras</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Simulaciones ilimitadas</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Copiloto de postulación completo</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Historial de simulaciones</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Exportar resultados PDF</span>
+              </li>
+            </ul>
+            
+            <a href="register.html?plan=pro" class="btn btn-primary btn-block">
+              Comenzar Prueba Gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ========== FAQ SECTION ========== -->
+    <section class="section section-gray" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+          <p class="section-subtitle">
+            Resolvemos tus dudas más comunes sobre el proceso de admisión.
+          </p>
+        </div>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Qué es la PAES y cómo funciona?
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>La PAES (Prueba de Acceso a la Educación Superior) es el instrumento de selección utilizado en Chile para el ingreso a las universidades del sistema único de admisión. Reemplazó a la PSU desde 2022 y evalúa competencias en Comprensión Lectora, Matemática (M1 y M2), Ciencias e Historia.</p>
+                <p>El puntaje PAES se combina con el NEM y Ranking para calcular el puntaje ponderado final que determina tu admisión.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo se calcula el puntaje ponderado?
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>El puntaje ponderado se calcula multiplicando cada puntaje (NEM, Ranking, pruebas PAES) por su respectiva ponderación definida por cada carrera, y luego sumando todos los resultados.</p>
+                <p>Por ejemplo, si una carrera pondera: NEM 10%, Ranking 20%, Comprensión Lectora 20%, Matemática 1 30% y Ciencias 20%, tu puntaje sería: (NEM×0.10) + (Ranking×0.20) + (CL×0.20) + (M1×0.30) + (Ciencias×0.20).</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Qué diferencia hay entre NEM y Ranking?
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p><strong>NEM (Notas de Enseñanza Media):</strong> Es la conversión de tu promedio de notas de 1° a 4° medio a una escala de 100 a 1000 puntos. Es el mismo para todos los estudiantes con el mismo promedio.</p>
+                <p><strong>Ranking:</strong> Compara tu rendimiento con el de las generaciones anteriores de tu mismo establecimiento. Premia a quienes superan el promedio histórico de su colegio, pudiendo obtener hasta 150 puntos adicionales sobre tu NEM.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cuántas veces puedo usar el simulador?
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Con la cuenta gratuita puedes realizar hasta 3 simulaciones completas por mes. Si necesitas más, el plan PRO te ofrece simulaciones ilimitadas, además de acceso al Copiloto de Postulación y otras herramientas avanzadas.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Los puntajes de corte son exactos?
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>Los puntajes de corte que mostramos son referenciales y se basan en datos históricos de procesos anteriores. El puntaje de corte real de cada año depende de la oferta de vacantes y la demanda de postulantes, por lo que puede variar.</p>
+                <p>Te recomendamos usar estos datos como referencia y siempre consultar los resultados oficiales publicados por el DEMRE.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo funciona el Copiloto de Postulación?
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                <p>El Copiloto es un asistente que te guía paso a paso para encontrar las mejores opciones de carrera según tu perfil. Te hace preguntas sobre tus intereses, puntajes, ubicación preferida y situación económica.</p>
+                <p>Luego, genera una lista personalizada de 20 carreras divididas en tres categorías: Seguras (alta probabilidad de ingreso), Realistas (probabilidad moderada) y Aspiracionales (más competitivas pero posibles).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ========== CTA SECTION ========== -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title" style="color: white;">¿Listo para planificar tu futuro?</h2>
+          <p class="section-subtitle mb-5">
+            Únete a miles de estudiantes que ya están usando nuestras herramientas.
+          </p>
+          <div class="d-flex justify-center gap-3 flex-wrap">
+            <a href="register.html" class="btn btn-primary btn-lg">
+              <i class="fas fa-rocket"></i>
+              Crear Cuenta Gratis
+            </a>
+            <a href="simulador.html" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.3); color: white;">
+              <i class="fas fa-calculator"></i>
+              Probar Simulador
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span>SimuPAES</span>
+          </div>
+          <p class="footer-description">
+            Herramientas gratuitas para simular tu puntaje PAES, calcular NEM y ranking, y planificar tu ingreso a la universidad.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Herramientas -->
+        <div class="footer-column">
+          <h4 class="footer-column-title">Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="simulador.html" class="footer-link">Simulador PAES</a></li>
+            <li><a href="copiloto.html" class="footer-link">Copiloto de Postulación</a></li>
+            <li><a href="herramientas.html#calculadora-nem" class="footer-link">Calculadora NEM</a></li>
+            <li><a href="herramientas.html#simulador-ranking" class="footer-link">Simulador Ranking</a></li>
+            <li><a href="herramientas.html#carreras" class="footer-link">Buscador de Carreras</a></li>
+          </ul>
+        </div>
+        
+        <!-- Recursos -->
+        <div class="footer-column">
+          <h4 class="footer-column-title">Recursos</h4>
+          <ul class="footer-links">
+            <li><a href="herramientas.html#universidades" class="footer-link">Universidades</a></li>
+            <li><a href="#fechas" class="footer-link">Fechas Importantes</a></li>
+            <li><a href="#faq" class="footer-link">Preguntas Frecuentes</a></li>
+            <li><a href="planes.html" class="footer-link">Planes y Precios</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal -->
+        <div class="footer-column">
+          <h4 class="footer-column-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
+            <li><a href="terminos.html#privacidad" class="footer-link">Política de Privacidad</a></li>
+            <li><a href="terminos.html#cookies" class="footer-link">Política de Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2025 SimuPAES. Todos los derechos reservados.
+        </p>
+        <div class="footer-legal">
+          <a href="terminos.html" class="footer-legal-link">Términos</a>
+          <a href="terminos.html#privacidad" class="footer-legal-link">Privacidad</a>
+          <a href="contacto.html" class="footer-legal-link">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

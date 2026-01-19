@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Archivo Principal de Estilos
+   Importa todos los módulos CSS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import 'variables.css';
+@import 'base.css';
+@import 'components.css';
+@import 'layout.css';
+@import 'utilities.css';
+@import 'pages.css';

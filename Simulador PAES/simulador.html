@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulador de puntaje PAES 2025. Calcula tu puntaje ponderado y compara con puntajes de corte de universidades chilenas.">
+  <title>Simulador de Puntajes PAES 2025 - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text">Simu<span>PAES</span></span>
+        </a>
+        
+        <nav class="nav-main">
+          <a href="simulador.html" class="nav-link is-active">Simulador</a>
+          <a href="copiloto.html" class="nav-link">Copiloto</a>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle">Herramientas <i class="fas fa-chevron-down"></i></button>
+            <div class="nav-dropdown-menu">
+              <a href="herramientas.html#calculadora-nem" class="nav-dropdown-item"><i class="fas fa-calculator"></i>Calculadora NEM</a>
+              <a href="herramientas.html#simulador-ranking" class="nav-dropdown-item"><i class="fas fa-chart-line"></i>Simulador Ranking</a>
+              <a href="herramientas.html#universidades" class="nav-dropdown-item"><i class="fas fa-university"></i>Universidades</a>
+              <a href="herramientas.html#carreras" class="nav-dropdown-item"><i class="fas fa-search"></i>Buscar Carreras</a>
+            </div>
+          </div>
+          <a href="planes.html" class="nav-link">Planes</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-ghost">Iniciar Sesión</a>
+          <a href="register.html" class="btn btn-primary">Crear Cuenta</a>
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+        <span class="logo-text">Simu<span>PAES</span></span>
+      </a>
+      <button class="mobile-menu-close" id="menu-close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i>Inicio</a>
+      <a href="simulador.html" class="mobile-nav-link is-active"><i class="fas fa-calculator"></i>Simulador</a>
+      <a href="copiloto.html" class="mobile-nav-link"><i class="fas fa-robot"></i>Copiloto</a>
+      <div class="mobile-nav-divider"></div>
+      <a href="herramientas.html" class="mobile-nav-link"><i class="fas fa-tools"></i>Herramientas</a>
+      <a href="planes.html" class="mobile-nav-link"><i class="fas fa-crown"></i>Planes</a>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Iniciar Sesión</a>
+      <a href="register.html" class="btn btn-primary btn-block">Crear Cuenta</a>
+    </div>
+  </div>
+  
+  <main id="main-content">
+    <!-- Simulator Content -->
+    <section class="simulator-compact">
+      <div class="container">
+        <div class="simulator-layout-compact">
+          <!-- Form Section -->
+          <div class="simulator-form-compact">
+            <div class="simulator-form-title">
+              <i class="fas fa-calculator"></i>
+              <h2>Simulador de Puntaje PAES</h2>
+            </div>
+            <form id="simulator-form">
+              <!-- Puntajes en grid compacto -->
+              <div class="simulator-inputs-grid">
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="nem">NEM *</label>
+                  <input type="number" id="nem" name="nem" class="form-input-sm" 
+                         placeholder="720" min="100" max="1000" required>
+                </div>
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="ranking">Ranking *</label>
+                  <input type="number" id="ranking" name="ranking" class="form-input-sm" 
+                         placeholder="780" min="100" max="1000" required>
+                </div>
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="clec">C. Lectora *</label>
+                  <input type="number" id="clec" name="clec" class="form-input-sm" 
+                         placeholder="850" min="100" max="1000" required>
+                </div>
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="m1">M1 *</label>
+                  <input type="number" id="m1" name="m1" class="form-input-sm" 
+                         placeholder="890" min="100" max="1000" required>
+                </div>
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="m2">M2</label>
+                  <input type="number" id="m2" name="m2" class="form-input-sm" 
+                         placeholder="Opc." min="100" max="1000">
+                </div>
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="ciencias">Ciencias</label>
+                  <input type="number" id="ciencias" name="ciencias" class="form-input-sm" 
+                         placeholder="Opc." min="100" max="1000">
+                </div>
+                <div class="form-group-compact">
+                  <label class="form-label-sm" for="historia">Historia</label>
+                  <input type="number" id="historia" name="historia" class="form-input-sm" 
+                         placeholder="Opc." min="100" max="1000">
+                </div>
+              </div>
+              
+              <!-- Carrera y Ponderaciones en fila -->
+              <div class="simulator-career-row">
+                <div class="form-group-compact career-select">
+                  <label class="form-label-sm" for="carrera">Carrera</label>
+                  <select id="carrera" name="carrera" class="form-input-sm">
+                    <option value="">Ponderaciones personalizadas</option>
+                    <option value="medicina-uchile">Medicina - U. Chile</option>
+                    <option value="derecho-puc">Derecho - PUC</option>
+                    <option value="ing-civil-uchile">Ing. Civil - U. Chile</option>
+                    <option value="ing-comercial-puc">Ing. Comercial - PUC</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-calculate">
+                  <i class="fas fa-calculator"></i> Calcular
+                </button>
+              </div>
+              
+              <!-- Ponderaciones Personalizadas (colapsable) -->
+              <details id="custom-weights" class="weights-details">
+                <summary class="weights-summary">
+                  <i class="fas fa-sliders-h"></i> Ponderaciones
+                  <span class="weights-total">Total: <strong id="weights-total">100%</strong></span>
+                </summary>
+                <div class="weights-grid">
+                  <div class="weight-input">
+                    <label for="pond-nem">NEM</label>
+                    <input type="number" id="pond-nem" value="10" min="0" max="100">%
+                  </div>
+                  <div class="weight-input">
+                    <label for="pond-ranking">Rank</label>
+                    <input type="number" id="pond-ranking" value="20" min="0" max="100">%
+                  </div>
+                  <div class="weight-input">
+                    <label for="pond-clec">Lect</label>
+                    <input type="number" id="pond-clec" value="20" min="0" max="100">%
+                  </div>
+                  <div class="weight-input">
+                    <label for="pond-m1">M1</label>
+                    <input type="number" id="pond-m1" value="30" min="0" max="100">%
+                  </div>
+                  <div class="weight-input">
+                    <label for="pond-m2">M2</label>
+                    <input type="number" id="pond-m2" value="0" min="0" max="100">%
+                  </div>
+                  <div class="weight-input">
+                    <label for="pond-electiva">Elec</label>
+                    <input type="number" id="pond-electiva" value="20" min="0" max="100">%
+                  </div>
+                </div>
+              </details>
+            </form>
+          </div>
+          
+          <!-- Results Panel Compact -->
+          <div class="results-panel-compact" id="results-panel">
+            <div class="results-score-box">
+              <span class="results-label-sm">Tu Puntaje Ponderado</span>
+              <span class="results-score-lg" id="result-score">---</span>
+            </div>
+            <div class="results-breakdown-compact">
+              <p class="results-breakdown-title">Desglose por prueba</p>
+              <div class="breakdown-row"><span>NEM (10%)</span><span id="calc-nem">--</span></div>
+              <div class="breakdown-row"><span>Ranking (20%)</span><span id="calc-ranking">--</span></div>
+              <div class="breakdown-row"><span>C. Lectora (20%)</span><span id="calc-clec">--</span></div>
+              <div class="breakdown-row"><span>Matemática 1 (30%)</span><span id="calc-m1">--</span></div>
+              <div class="breakdown-row"><span>Electiva (20%)</span><span id="calc-electiva">--</span></div>
+            </div>
+            <div class="results-indicator-compact" id="results-indicator">
+              <i class="fas fa-info-circle"></i>
+              <span>Ingresa tus puntajes para calcular</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <details class="comparison-details">
+          <summary class="comparison-summary">
+            <i class="fas fa-table"></i>
+            <span>Puntajes de Corte 2024</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </summary>
+          <div class="table-wrapper-compact">
+            <table class="table table-compact">
+              <thead>
+                <tr>
+                  <th>Universidad</th>
+                  <th>Carrera</th>
+                  <th>Corte</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="comparison-table">
+                <tr>
+                  <td>U. Chile</td>
+                  <td>Medicina</td>
+                  <td><strong>825</strong></td>
+                  <td><span class="badge badge-error">Alto</span></td>
+                </tr>
+                <tr>
+                  <td>PUC</td>
+                  <td>Derecho</td>
+                  <td><strong>780</strong></td>
+                  <td><span class="badge badge-warning">Medio</span></td>
+                </tr>
+                <tr>
+                  <td>U. Chile</td>
+                  <td>Ing. Civil</td>
+                  <td><strong>763</strong></td>
+                  <td><span class="badge badge-warning">Medio</span></td>
+                </tr>
+                <tr>
+                  <td>PUC</td>
+                  <td>Ing. Comercial</td>
+                  <td><strong>745</strong></td>
+                  <td><span class="badge badge-primary">Mod.</span></td>
+                </tr>
+                <tr>
+                  <td>U. Concepción</td>
+                  <td>Medicina</td>
+                  <td><strong>789</strong></td>
+                  <td><span class="badge badge-warning">Medio</span></td>
+                </tr>
+                <tr>
+                  <td>USACH</td>
+                  <td>Ing. Industrial</td>
+                  <td><strong>698</strong></td>
+                  <td><span class="badge badge-success">Bajo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <a href="herramientas.html#carreras" class="comparison-link">
+            Ver todas las carreras <i class="fas fa-arrow-right"></i>
+          </a>
+        </details>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span>SimuPAES</span>
+          </div>
+          <p class="footer-description">Herramientas gratuitas para simular tu puntaje PAES y planificar tu futuro.</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="simulador.html" class="footer-link">Simulador PAES</a></li>
+            <li><a href="copiloto.html" class="footer-link">Copiloto</a></li>
+            <li><a href="herramientas.html" class="footer-link">Más Herramientas</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Recursos</h4>
+          <ul class="footer-links">
+            <li><a href="planes.html" class="footer-link">Planes</a></li>
+            <li><a href="index.html#faq" class="footer-link">FAQ</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html" class="footer-link">Términos</a></li>
+            <li><a href="terminos.html#privacidad" class="footer-link">Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 SimuPAES. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+  <script src="js/simulator.js"></script>
+</body>
+</html>

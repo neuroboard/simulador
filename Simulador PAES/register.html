@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crea tu cuenta gratis en SimuPAES y comienza a simular tu puntaje PAES 2025.">
+  <title>Crear Cuenta - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="auth-layout">
+    <!-- Visual Side -->
+    <div class="auth-visual">
+      <div class="auth-visual-content">
+        <a href="index.html" class="logo mb-5">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text" style="color: white;">Simu<span>PAES</span></span>
+        </a>
+        
+        <h1 class="auth-visual-title">Planifica tu futuro académico</h1>
+        <p class="auth-visual-text">
+          Únete a más de 50.000 estudiantes que ya están usando nuestras herramientas para preparar su ingreso a la universidad.
+        </p>
+        
+        <ul class="auth-visual-features">
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Simulador de puntajes PAES gratuito</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Calculadora de NEM y Ranking</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Buscador de carreras y universidades</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Puntajes de corte actualizados</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>100% gratis para comenzar</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Form Side -->
+    <div class="auth-form-section">
+      <div class="auth-form-container">
+        <a href="index.html" class="auth-logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span>SimuPAES</span>
+        </a>
+        
+        <h2 class="auth-title">Crear Cuenta Gratis</h2>
+        <p class="auth-subtitle">Regístrate para guardar tus simulaciones y acceder a más funciones.</p>
+        
+        <!-- Social Login -->
+        <div class="auth-social">
+          <button type="button" class="auth-social-btn">
+            <i class="fab fa-google"></i>
+            Google
+          </button>
+          <button type="button" class="auth-social-btn">
+            <i class="fab fa-facebook-f"></i>
+            Facebook
+          </button>
+        </div>
+        
+        <div class="divider-text">o regístrate con email</div>
+        
+        <!-- Register Form -->
+        <form id="register-form" class="mt-4">
+          <div class="grid grid-2 gap-md">
+            <div class="form-group">
+              <label class="form-label form-label-required" for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="form-input" 
+                     placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label-required" for="apellido">Apellido</label>
+              <input type="text" id="apellido" name="apellido" class="form-input" 
+                     placeholder="Tu apellido" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label form-label-required" for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" class="form-input" 
+                   placeholder="tu@email.com" required>
+            <span class="form-error" id="email-error"></span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label form-label-required" for="password">Contraseña</label>
+            <input type="password" id="password" name="password" class="form-input" 
+                   placeholder="Mínimo 8 caracteres" required minlength="8">
+            <span class="form-hint">Debe tener al menos 8 caracteres</span>
+            <span class="form-error" id="password-error"></span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label form-label-required" for="password-confirm">Confirmar contraseña</label>
+            <input type="password" id="password-confirm" name="password-confirm" class="form-input" 
+                   placeholder="Repite tu contraseña" required minlength="8">
+            <span class="form-error" id="password-confirm-error"></span>
+          </div>
+          
+          <div class="form-check mb-3">
+            <input type="checkbox" id="terms" name="terms" class="form-check-input" required>
+            <label for="terms" class="form-check-label">
+              Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a> y la 
+              <a href="terminos.html#privacidad" target="_blank">política de privacidad</a>
+            </label>
+          </div>
+          
+          <div class="form-check mb-4">
+            <input type="checkbox" id="newsletter" name="newsletter" class="form-check-input">
+            <label for="newsletter" class="form-check-label">
+              Quiero recibir noticias y consejos sobre el proceso de admisión
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg btn-block">
+            <i class="fas fa-user-plus"></i>
+            Crear Cuenta
+          </button>
+          
+          <div class="alert alert-error mt-4" id="register-error" style="display: none;">
+            <div class="alert-icon"><i class="fas fa-exclamation-circle"></i></div>
+            <div class="alert-content">
+              <p class="mb-0" id="register-error-message">Error al crear la cuenta.</p>
+            </div>
+          </div>
+          
+          <div class="alert alert-success mt-4" id="register-success" style="display: none;">
+            <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="alert-content">
+              <p class="mb-0">¡Cuenta creada! Revisa tu email para confirmar.</p>
+            </div>
+          </div>
+        </form>
+        
+        <p class="auth-footer">
+          ¿Ya tienes cuenta? <a href="login.html" class="font-semibold">Iniciar sesión</a>
+        </p>
+        
+        <p class="text-center text-sm text-muted mt-4">
+          <a href="index.html"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/auth.js"></script>
+</body>
+</html>

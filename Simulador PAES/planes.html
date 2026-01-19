@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Planes y precios de SimuPAES. Plan Gratis y PRO para simular tu puntaje PAES 2025.">
+  <title>Planes y Precios - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text">Simu<span>PAES</span></span>
+        </a>
+        
+        <nav class="nav-main">
+          <a href="simulador.html" class="nav-link">Simulador</a>
+          <a href="copiloto.html" class="nav-link">Copiloto</a>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle">Herramientas <i class="fas fa-chevron-down"></i></button>
+            <div class="nav-dropdown-menu">
+              <a href="herramientas.html#calculadora-nem" class="nav-dropdown-item"><i class="fas fa-calculator"></i>Calculadora NEM</a>
+              <a href="herramientas.html#simulador-ranking" class="nav-dropdown-item"><i class="fas fa-chart-line"></i>Simulador Ranking</a>
+              <a href="herramientas.html#universidades" class="nav-dropdown-item"><i class="fas fa-university"></i>Universidades</a>
+            </div>
+          </div>
+          <a href="planes.html" class="nav-link is-active">Planes</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-ghost">Iniciar Sesión</a>
+          <a href="register.html" class="btn btn-primary">Crear Cuenta</a>
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+        <span class="logo-text">Simu<span>PAES</span></span>
+      </a>
+      <button class="mobile-menu-close" id="menu-close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i>Inicio</a>
+      <a href="simulador.html" class="mobile-nav-link"><i class="fas fa-calculator"></i>Simulador</a>
+      <a href="copiloto.html" class="mobile-nav-link"><i class="fas fa-robot"></i>Copiloto</a>
+      <a href="herramientas.html" class="mobile-nav-link"><i class="fas fa-tools"></i>Herramientas</a>
+      <a href="planes.html" class="mobile-nav-link is-active"><i class="fas fa-crown"></i>Planes</a>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Iniciar Sesión</a>
+      <a href="register.html" class="btn btn-primary btn-block">Crear Cuenta</a>
+    </div>
+  </div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Inicio</a>
+          <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+          <span class="breadcrumb-current">Planes</span>
+        </nav>
+        <h1 class="page-title">Planes y Precios</h1>
+        <p class="page-description">
+          Elige el plan que mejor se adapte a tus necesidades. Comienza gratis.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="section">
+      <div class="container">
+        <div class="pricing-grid">
+          <!-- Plan Gratis -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-name">Gratis</h3>
+              <div class="pricing-price">
+                <span class="pricing-currency">$</span>
+                <span class="pricing-amount">0</span>
+              </div>
+              <p class="pricing-description">
+                Perfecto para comenzar a explorar tus opciones universitarias.
+              </p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Simulador de puntajes básico</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Calculadora NEM y Ranking</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Búsqueda de carreras (limitada a 50 resultados)</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>3 simulaciones completas por mes</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Acceso a puntajes de corte históricos</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Copiloto de postulación</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Historial de simulaciones guardado</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Comparador de carreras avanzado</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Exportar resultados a PDF</span>
+              </li>
+              <li class="pricing-feature is-disabled">
+                <i class="fas fa-times"></i>
+                <span>Soporte prioritario</span>
+              </li>
+            </ul>
+            
+            <a href="register.html" class="btn btn-secondary btn-block btn-lg">
+              Comenzar Gratis
+            </a>
+          </div>
+          
+          <!-- Plan PRO -->
+          <div class="pricing-card is-featured">
+            <div class="pricing-header">
+              <h3 class="pricing-name">PRO</h3>
+              <div class="pricing-price">
+                <span class="pricing-currency">$</span>
+                <span class="pricing-amount">9.990</span>
+                <span class="pricing-period">/ mes</span>
+              </div>
+              <p class="pricing-description">
+                Todas las herramientas para maximizar tus posibilidades de ingreso.
+              </p>
+            </div>
+            
+            <ul class="pricing-features">
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Simulador de puntajes avanzado</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Calculadora NEM y Ranking</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Búsqueda ilimitada de carreras</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Simulaciones ilimitadas</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Puntajes de corte históricos detallados</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Copiloto de postulación completo</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Historial de simulaciones guardado</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Comparador de carreras avanzado</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Exportar resultados a PDF</span>
+              </li>
+              <li class="pricing-feature">
+                <i class="fas fa-check"></i>
+                <span>Soporte prioritario por email</span>
+              </li>
+            </ul>
+            
+            <a href="register.html?plan=pro" class="btn btn-primary btn-block btn-lg">
+              Comenzar Prueba de 7 Días
+            </a>
+            <p class="text-center text-sm text-muted mt-3">Sin compromiso. Cancela cuando quieras.</p>
+          </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <div class="mt-6">
+          <h2 class="text-2xl font-bold text-center mb-5">Comparación Detallada</h2>
+          
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Característica</th>
+                  <th class="text-center">Gratis</th>
+                  <th class="text-center">PRO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Simulaciones mensuales</strong></td>
+                  <td class="text-center">3</td>
+                  <td class="text-center"><span class="badge badge-success">Ilimitadas</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Calculadora NEM</strong></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Calculadora Ranking</strong></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Búsqueda de carreras</strong></td>
+                  <td class="text-center">50 resultados</td>
+                  <td class="text-center"><span class="badge badge-success">Ilimitados</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Puntajes de corte históricos</strong></td>
+                  <td class="text-center">Último año</td>
+                  <td class="text-center"><span class="badge badge-success">5 años</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Copiloto de postulación</strong></td>
+                  <td class="text-center"><i class="fas fa-times text-error"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Recomendaciones personalizadas</strong></td>
+                  <td class="text-center"><i class="fas fa-times text-error"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Historial de simulaciones</strong></td>
+                  <td class="text-center"><i class="fas fa-times text-error"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Comparador de carreras</strong></td>
+                  <td class="text-center"><i class="fas fa-times text-error"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Exportar a PDF</strong></td>
+                  <td class="text-center"><i class="fas fa-times text-error"></i></td>
+                  <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                </tr>
+                <tr>
+                  <td><strong>Soporte</strong></td>
+                  <td class="text-center">FAQ</td>
+                  <td class="text-center"><span class="badge badge-success">Email prioritario</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="mt-6">
+          <h2 class="text-2xl font-bold text-center mb-5">Preguntas sobre Planes</h2>
+          
+          <div class="faq-list" style="max-width: 700px; margin: 0 auto;">
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Puedo cambiar de plan en cualquier momento?
+                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>Sí, puedes actualizar a PRO o volver a Gratis en cualquier momento desde tu panel de usuario. Los cambios se aplican inmediatamente y si bajas de plan, mantendrás el acceso PRO hasta el final del período pagado.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Qué métodos de pago aceptan?
+                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), además de transferencias bancarias y WebPay. También puedes pagar con Flow y otros medios locales chilenos.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿Hay descuentos para estudiantes?
+                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>El plan Gratis ya está diseñado para estudiantes y ofrece todas las funciones básicas sin costo. Además, durante el período de postulaciones (diciembre-enero) ofrecemos promociones especiales en el plan PRO.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                ¿La prueba de 7 días requiere tarjeta de crédito?
+                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>Sí, para activar la prueba gratuita de 7 días necesitas registrar un método de pago. Sin embargo, no se realizará ningún cobro hasta que termine el período de prueba y solo si decides continuar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section section-primary">
+      <div class="container text-center">
+        <h2 class="text-3xl font-bold mb-3" style="color: white;">¿Aún tienes dudas?</h2>
+        <p class="text-lg mb-5" style="color: rgba(255,255,255,0.9);">
+          Contáctanos y te ayudaremos a elegir el plan adecuado para ti.
+        </p>
+        <a href="contacto.html" class="btn btn-lg" style="background: white; color: var(--color-primary);">
+          <i class="fas fa-envelope"></i>
+          Contactar
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span>SimuPAES</span>
+          </div>
+          <p class="footer-description">Herramientas gratuitas para simular tu puntaje PAES.</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="simulador.html" class="footer-link">Simulador</a></li>
+            <li><a href="copiloto.html" class="footer-link">Copiloto</a></li>
+            <li><a href="herramientas.html" class="footer-link">Más</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html" class="footer-link">Términos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 SimuPAES. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

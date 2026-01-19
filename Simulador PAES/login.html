@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inicia sesión en SimuPAES para acceder a tu cuenta y simulaciones guardadas.">
+  <title>Iniciar Sesión - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="auth-layout">
+    <!-- Visual Side -->
+    <div class="auth-visual">
+      <div class="auth-visual-content">
+        <a href="index.html" class="logo mb-5">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text" style="color: white;">Simu<span>PAES</span></span>
+        </a>
+        
+        <h1 class="auth-visual-title">Bienvenido de vuelta</h1>
+        <p class="auth-visual-text">
+          Accede a tu cuenta para continuar planificando tu futuro académico con todas las herramientas que necesitas.
+        </p>
+        
+        <ul class="auth-visual-features">
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Guarda tu historial de simulaciones</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Accede desde cualquier dispositivo</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Recibe recomendaciones personalizadas</span>
+          </li>
+          <li class="auth-visual-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Compara múltiples escenarios</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Form Side -->
+    <div class="auth-form-section">
+      <div class="auth-form-container">
+        <a href="index.html" class="auth-logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span>SimuPAES</span>
+        </a>
+        
+        <h2 class="auth-title">Iniciar Sesión</h2>
+        <p class="auth-subtitle">Ingresa tus credenciales para acceder a tu cuenta.</p>
+        
+        <!-- Social Login -->
+        <div class="auth-social">
+          <button type="button" class="auth-social-btn">
+            <i class="fab fa-google"></i>
+            Google
+          </button>
+          <button type="button" class="auth-social-btn">
+            <i class="fab fa-facebook-f"></i>
+            Facebook
+          </button>
+        </div>
+        
+        <div class="divider-text">o continúa con email</div>
+        
+        <!-- Login Form -->
+        <form id="login-form" class="mt-4">
+          <div class="form-group">
+            <label class="form-label form-label-required" for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" class="form-input" 
+                   placeholder="tu@email.com" required>
+            <span class="form-error" id="email-error"></span>
+          </div>
+          
+          <div class="form-group">
+            <div class="d-flex justify-between items-center mb-1">
+              <label class="form-label form-label-required mb-0" for="password">Contraseña</label>
+              <a href="#" class="text-sm text-primary">¿Olvidaste tu contraseña?</a>
+            </div>
+            <input type="password" id="password" name="password" class="form-input" 
+                   placeholder="••••••••" required minlength="8">
+            <span class="form-error" id="password-error"></span>
+          </div>
+          
+          <div class="form-check mb-4">
+            <input type="checkbox" id="remember" name="remember" class="form-check-input">
+            <label for="remember" class="form-check-label">Mantener sesión iniciada</label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg btn-block">
+            <i class="fas fa-sign-in-alt"></i>
+            Iniciar Sesión
+          </button>
+          
+          <div class="alert alert-error mt-4" id="login-error" style="display: none;">
+            <div class="alert-icon"><i class="fas fa-exclamation-circle"></i></div>
+            <div class="alert-content">
+              <p class="mb-0" id="login-error-message">Error al iniciar sesión.</p>
+            </div>
+          </div>
+        </form>
+        
+        <p class="auth-footer">
+          ¿No tienes cuenta? <a href="register.html" class="font-semibold">Crear cuenta gratis</a>
+        </p>
+        
+        <p class="text-center text-sm text-muted mt-4">
+          <a href="index.html"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/auth.js"></script>
+</body>
+</html>

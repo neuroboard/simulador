@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Copiloto de Postulación PAES 2025. Recibe recomendaciones personalizadas de carreras basadas en tus intereses y puntajes.">
+  <title>Copiloto de Postulación - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text">Simu<span>PAES</span></span>
+        </a>
+        
+        <nav class="nav-main">
+          <a href="simulador.html" class="nav-link">Simulador</a>
+          <a href="copiloto.html" class="nav-link is-active">Copiloto</a>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle">Herramientas <i class="fas fa-chevron-down"></i></button>
+            <div class="nav-dropdown-menu">
+              <a href="herramientas.html#calculadora-nem" class="nav-dropdown-item"><i class="fas fa-calculator"></i>Calculadora NEM</a>
+              <a href="herramientas.html#simulador-ranking" class="nav-dropdown-item"><i class="fas fa-chart-line"></i>Simulador Ranking</a>
+              <a href="herramientas.html#universidades" class="nav-dropdown-item"><i class="fas fa-university"></i>Universidades</a>
+            </div>
+          </div>
+          <a href="planes.html" class="nav-link">Planes</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-ghost">Iniciar Sesión</a>
+          <a href="register.html" class="btn btn-primary">Crear Cuenta</a>
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+        <span class="logo-text">Simu<span>PAES</span></span>
+      </a>
+      <button class="mobile-menu-close" id="menu-close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i>Inicio</a>
+      <a href="simulador.html" class="mobile-nav-link"><i class="fas fa-calculator"></i>Simulador</a>
+      <a href="copiloto.html" class="mobile-nav-link is-active"><i class="fas fa-robot"></i>Copiloto</a>
+      <a href="herramientas.html" class="mobile-nav-link"><i class="fas fa-tools"></i>Herramientas</a>
+      <a href="planes.html" class="mobile-nav-link"><i class="fas fa-crown"></i>Planes</a>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Iniciar Sesión</a>
+      <a href="register.html" class="btn btn-primary btn-block">Crear Cuenta</a>
+    </div>
+  </div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Inicio</a>
+          <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+          <span class="breadcrumb-current">Copiloto de Postulación</span>
+        </nav>
+        <h1 class="page-title">Copiloto de Postulación</h1>
+        <p class="page-description">
+          Tu asistente inteligente para encontrar las mejores opciones de carrera según tu perfil.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Wizard Content -->
+    <section class="section-sm">
+      <div class="container" style="max-width: 850px;">
+        
+        <!-- Progress Steps -->
+        <div class="wizard-progress" id="wizard-progress" data-progress="1">
+          <div class="wizard-step is-active" data-step="1">
+            <div class="wizard-step-number">1</div>
+            <span class="wizard-step-label">Puntajes</span>
+          </div>
+          <div class="wizard-step" data-step="2">
+            <div class="wizard-step-number">2</div>
+            <span class="wizard-step-label">Ubicación</span>
+          </div>
+          <div class="wizard-step" data-step="3">
+            <div class="wizard-step-number">3</div>
+            <span class="wizard-step-label">Intereses</span>
+          </div>
+          <div class="wizard-step" data-step="4">
+            <div class="wizard-step-number">4</div>
+            <span class="wizard-step-label">Prioridades</span>
+          </div>
+          <div class="wizard-step" data-step="5">
+            <div class="wizard-step-number">5</div>
+            <span class="wizard-step-label">Resultados</span>
+          </div>
+        </div>
+        
+        <div class="wizard-content">
+          <!-- Step 1: Puntajes -->
+          <div class="wizard-panel is-active" data-panel="1">
+            <h2 class="wizard-title">¿Cuáles son tus puntajes?</h2>
+            <p class="wizard-description">
+              Ingresa tus puntajes estimados o reales para calcular tus opciones.
+            </p>
+            
+            <div class="grid grid-2 gap-lg">
+              <div class="form-group">
+                <label class="form-label form-label-required" for="cp-nem">Puntaje NEM</label>
+                <input type="number" id="cp-nem" class="form-input" placeholder="Ej: 720" min="100" max="1000">
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label-required" for="cp-ranking">Puntaje Ranking</label>
+                <input type="number" id="cp-ranking" class="form-input" placeholder="Ej: 780" min="100" max="1000">
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label-required" for="cp-clec">Comprensión Lectora</label>
+                <input type="number" id="cp-clec" class="form-input" placeholder="Ej: 850" min="100" max="1000">
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label-required" for="cp-m1">Matemática 1</label>
+                <input type="number" id="cp-m1" class="form-input" placeholder="Ej: 890" min="100" max="1000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cp-ciencias">Ciencias (opcional)</label>
+                <input type="number" id="cp-ciencias" class="form-input" placeholder="Opcional" min="100" max="1000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cp-historia">Historia (opcional)</label>
+                <input type="number" id="cp-historia" class="form-input" placeholder="Opcional" min="100" max="1000">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 2: Ubicación -->
+          <div class="wizard-panel" data-panel="2">
+            <h2 class="wizard-title">¿Dónde te gustaría estudiar?</h2>
+            <p class="wizard-description">
+              Selecciona las regiones donde estarías dispuesto a estudiar.
+            </p>
+            
+            <div class="wizard-options grid-4">
+              <div class="wizard-option" data-value="rm">
+                <i class="wizard-option-icon fas fa-city"></i>
+                <span class="wizard-option-label">Región Metropolitana</span>
+              </div>
+              <div class="wizard-option" data-value="valparaiso">
+                <i class="wizard-option-icon fas fa-ship"></i>
+                <span class="wizard-option-label">Valparaíso</span>
+              </div>
+              <div class="wizard-option" data-value="biobio">
+                <i class="wizard-option-icon fas fa-tree"></i>
+                <span class="wizard-option-label">Biobío</span>
+              </div>
+              <div class="wizard-option" data-value="araucania">
+                <i class="wizard-option-icon fas fa-mountain"></i>
+                <span class="wizard-option-label">La Araucanía</span>
+              </div>
+              <div class="wizard-option" data-value="los-lagos">
+                <i class="wizard-option-icon fas fa-water"></i>
+                <span class="wizard-option-label">Los Lagos</span>
+              </div>
+              <div class="wizard-option" data-value="ohiggins">
+                <i class="wizard-option-icon fas fa-tractor"></i>
+                <span class="wizard-option-label">O'Higgins</span>
+              </div>
+              <div class="wizard-option" data-value="maule">
+                <i class="wizard-option-icon fas fa-wine-bottle"></i>
+                <span class="wizard-option-label">Maule</span>
+              </div>
+              <div class="wizard-option" data-value="cualquiera">
+                <i class="wizard-option-icon fas fa-globe-americas"></i>
+                <span class="wizard-option-label">Cualquier región</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 3: Intereses -->
+          <div class="wizard-panel" data-panel="3">
+            <h2 class="wizard-title">¿Qué áreas te interesan?</h2>
+            <p class="wizard-description">
+              Selecciona una o más áreas de estudio que te llamen la atención.
+            </p>
+            
+            <div class="wizard-options grid-3">
+              <div class="wizard-option" data-value="salud">
+                <i class="wizard-option-icon fas fa-heartbeat"></i>
+                <span class="wizard-option-label">Salud y Medicina</span>
+              </div>
+              <div class="wizard-option" data-value="ingenieria">
+                <i class="wizard-option-icon fas fa-cogs"></i>
+                <span class="wizard-option-label">Ingeniería</span>
+              </div>
+              <div class="wizard-option" data-value="ciencias">
+                <i class="wizard-option-icon fas fa-flask"></i>
+                <span class="wizard-option-label">Ciencias</span>
+              </div>
+              <div class="wizard-option" data-value="humanidades">
+                <i class="wizard-option-icon fas fa-book"></i>
+                <span class="wizard-option-label">Humanidades</span>
+              </div>
+              <div class="wizard-option" data-value="negocios">
+                <i class="wizard-option-icon fas fa-briefcase"></i>
+                <span class="wizard-option-label">Negocios y Economía</span>
+              </div>
+              <div class="wizard-option" data-value="derecho">
+                <i class="wizard-option-icon fas fa-balance-scale"></i>
+                <span class="wizard-option-label">Derecho</span>
+              </div>
+              <div class="wizard-option" data-value="arte">
+                <i class="wizard-option-icon fas fa-palette"></i>
+                <span class="wizard-option-label">Arte y Diseño</span>
+              </div>
+              <div class="wizard-option" data-value="educacion">
+                <i class="wizard-option-icon fas fa-chalkboard-teacher"></i>
+                <span class="wizard-option-label">Educación</span>
+              </div>
+              <div class="wizard-option" data-value="tecnologia">
+                <i class="wizard-option-icon fas fa-laptop-code"></i>
+                <span class="wizard-option-label">Tecnología</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 4: Prioridades -->
+          <div class="wizard-panel" data-panel="4">
+            <h2 class="wizard-title">¿Qué es más importante para ti?</h2>
+            <p class="wizard-description">
+              Ordena tus prioridades para personalizar las recomendaciones.
+            </p>
+            
+            <div class="wizard-options grid-3">
+              <div class="wizard-option" data-value="prestigio">
+                <i class="wizard-option-icon fas fa-award"></i>
+                <span class="wizard-option-label">Prestigio de la universidad</span>
+              </div>
+              <div class="wizard-option" data-value="empleabilidad">
+                <i class="wizard-option-icon fas fa-user-tie"></i>
+                <span class="wizard-option-label">Empleabilidad</span>
+              </div>
+              <div class="wizard-option" data-value="sueldo">
+                <i class="wizard-option-icon fas fa-dollar-sign"></i>
+                <span class="wizard-option-label">Sueldo futuro</span>
+              </div>
+              <div class="wizard-option" data-value="ubicacion">
+                <i class="wizard-option-icon fas fa-map-marker-alt"></i>
+                <span class="wizard-option-label">Cercanía a casa</span>
+              </div>
+              <div class="wizard-option" data-value="costo">
+                <i class="wizard-option-icon fas fa-piggy-bank"></i>
+                <span class="wizard-option-label">Bajo costo/Gratuidad</span>
+              </div>
+              <div class="wizard-option" data-value="vocacion">
+                <i class="wizard-option-icon fas fa-heart"></i>
+                <span class="wizard-option-label">Vocación personal</span>
+              </div>
+            </div>
+            
+            <div class="alert alert-info mt-5">
+              <div class="alert-icon"><i class="fas fa-info-circle"></i></div>
+              <div class="alert-content">
+                <p class="mb-0">Tip: Selecciona las 2-3 opciones más importantes para ti. Esto nos ayudará a ordenar tus resultados.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 5: Resultados -->
+          <div class="wizard-panel" data-panel="5">
+            <h2 class="wizard-title">Tus carreras recomendadas</h2>
+            <p class="wizard-description">
+              Basándonos en tu perfil, estas son las 20 mejores opciones para ti.
+            </p>
+            
+            <div class="results-categories" id="copilot-results">
+              <!-- Carreras Seguras -->
+              <div class="results-category safe">
+                <div class="results-category-header">
+                  <h3 class="results-category-title"><i class="fas fa-shield-alt"></i> Seguras</h3>
+                  <p class="results-category-subtitle">Alta probabilidad de ingreso</p>
+                </div>
+                <div class="results-category-list">
+                  <div class="results-career">
+                    <p class="results-career-name">Ingeniería Civil Industrial</p>
+                    <p class="results-career-info">U. de Santiago • Corte: 698 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Enfermería</p>
+                    <p class="results-career-info">U. de La Frontera • Corte: 598 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Contador Auditor</p>
+                    <p class="results-career-info">U. de Valparaíso • Corte: 620 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Pedagogía en Matemáticas</p>
+                    <p class="results-career-info">U. de Concepción • Corte: 580 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Ingeniería Comercial</p>
+                    <p class="results-career-info">U. de Talca • Corte: 650 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Kinesiología</p>
+                    <p class="results-career-info">U. de Magallanes • Corte: 610 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Psicología</p>
+                    <p class="results-career-info">U. de La Serena • Corte: 640 pts</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Carreras Realistas -->
+              <div class="results-category realistic">
+                <div class="results-category-header">
+                  <h3 class="results-category-title"><i class="fas fa-balance-scale"></i> Realistas</h3>
+                  <p class="results-category-subtitle">Probabilidad moderada</p>
+                </div>
+                <div class="results-category-list">
+                  <div class="results-career">
+                    <p class="results-career-name">Ingeniería Civil</p>
+                    <p class="results-career-info">U. de Concepción • Corte: 720 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Derecho</p>
+                    <p class="results-career-info">U. de Valparaíso • Corte: 710 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Arquitectura</p>
+                    <p class="results-career-info">U. del Bío-Bío • Corte: 680 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Medicina Veterinaria</p>
+                    <p class="results-career-info">U. Austral • Corte: 678 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Ing. Informática</p>
+                    <p class="results-career-info">U. de Santiago • Corte: 705 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Bioquímica</p>
+                    <p class="results-career-info">U. de Chile • Corte: 695 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Periodismo</p>
+                    <p class="results-career-info">PUC • Corte: 688 pts</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Carreras Aspiracionales -->
+              <div class="results-category aspirational">
+                <div class="results-category-header">
+                  <h3 class="results-category-title"><i class="fas fa-star"></i> Aspiracionales</h3>
+                  <p class="results-category-subtitle">Competitivas pero posibles</p>
+                </div>
+                <div class="results-category-list">
+                  <div class="results-career">
+                    <p class="results-career-name">Ingeniería Comercial</p>
+                    <p class="results-career-info">PUC • Corte: 745 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Ingeniería Civil</p>
+                    <p class="results-career-info">U. de Chile • Corte: 762 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Derecho</p>
+                    <p class="results-career-info">PUC • Corte: 780 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Odontología</p>
+                    <p class="results-career-info">U. de Chile • Corte: 790 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Medicina</p>
+                    <p class="results-career-info">U. de Concepción • Corte: 788 pts</p>
+                  </div>
+                  <div class="results-career">
+                    <p class="results-career-name">Arquitectura</p>
+                    <p class="results-career-info">U. de Chile • Corte: 755 pts</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center mt-5">
+              <a href="#" class="btn btn-primary btn-lg" id="export-results">
+                <i class="fas fa-download"></i>
+                Exportar Resultados (PRO)
+              </a>
+              <a href="simulador.html" class="btn btn-outline btn-lg ml-3">
+                <i class="fas fa-calculator"></i>
+                Ir al Simulador
+              </a>
+            </div>
+          </div>
+          
+          <!-- Wizard Actions -->
+          <div class="wizard-actions" id="wizard-actions">
+            <button type="button" class="btn btn-ghost" id="wizard-prev" disabled>
+              <i class="fas fa-arrow-left"></i>
+              Anterior
+            </button>
+            <button type="button" class="btn btn-primary" id="wizard-next">
+              Siguiente
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span>SimuPAES</span>
+          </div>
+          <p class="footer-description">Herramientas gratuitas para simular tu puntaje PAES.</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="simulador.html" class="footer-link">Simulador</a></li>
+            <li><a href="copiloto.html" class="footer-link">Copiloto</a></li>
+            <li><a href="herramientas.html" class="footer-link">Más</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html" class="footer-link">Términos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 SimuPAES. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+  <script src="js/copilot.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta al equipo de SimuPAES. Envíanos tus consultas, sugerencias o comentarios.">
+  <title>Contacto - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text">Simu<span>PAES</span></span>
+        </a>
+        
+        <nav class="nav-main">
+          <a href="simulador.html" class="nav-link">Simulador</a>
+          <a href="copiloto.html" class="nav-link">Copiloto</a>
+          <a href="herramientas.html" class="nav-link">Herramientas</a>
+          <a href="planes.html" class="nav-link">Planes</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-ghost">Iniciar Sesión</a>
+          <a href="register.html" class="btn btn-primary">Crear Cuenta</a>
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+        <span class="logo-text">Simu<span>PAES</span></span>
+      </a>
+      <button class="mobile-menu-close" id="menu-close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i>Inicio</a>
+      <a href="simulador.html" class="mobile-nav-link"><i class="fas fa-calculator"></i>Simulador</a>
+      <a href="copiloto.html" class="mobile-nav-link"><i class="fas fa-robot"></i>Copiloto</a>
+      <a href="herramientas.html" class="mobile-nav-link"><i class="fas fa-tools"></i>Herramientas</a>
+      <a href="planes.html" class="mobile-nav-link"><i class="fas fa-crown"></i>Planes</a>
+    </nav>
+  </div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Inicio</a>
+          <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+          <span class="breadcrumb-current">Contacto</span>
+        </nav>
+        <h1 class="page-title">Contacto</h1>
+        <p class="page-description">
+          ¿Tienes preguntas, sugerencias o necesitas ayuda? Estamos aquí para ti.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Contact Content -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <h2 class="contact-info-title">Hablemos</h2>
+            <p class="contact-info-text">
+              Estamos comprometidos a ayudarte en tu proceso de admisión universitaria. 
+              No dudes en contactarnos por cualquier consulta.
+            </p>
+            
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <p class="contact-method-label">Email</p>
+                <p class="contact-method-value">contacto@simupaes.cl</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <p class="contact-method-label">Horario de atención</p>
+                <p class="contact-method-value">Lunes a Viernes, 9:00 - 18:00</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div>
+                <p class="contact-method-label">Tiempo de respuesta</p>
+                <p class="contact-method-value">24-48 horas hábiles</p>
+              </div>
+            </div>
+            
+            <div class="mt-5">
+              <p class="text-sm" style="color: var(--color-gray-400);">Síguenos en redes sociales</p>
+              <div class="footer-social mt-3">
+                <a href="#" class="footer-social-link" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="footer-social-link" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="footer-social-link" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h2 class="contact-form-title">Envíanos un mensaje</h2>
+            
+            <form id="contact-form">
+              <div class="grid grid-2 gap-md">
+                <div class="form-group">
+                  <label class="form-label form-label-required" for="nombre">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" class="form-input" 
+                         placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label form-label-required" for="apellido">Apellido</label>
+                  <input type="text" id="apellido" name="apellido" class="form-input" 
+                         placeholder="Tu apellido" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label form-label-required" for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" class="form-input" 
+                       placeholder="tu@email.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label form-label-required" for="asunto">Asunto</label>
+                <select id="asunto" name="asunto" class="form-select" required>
+                  <option value="">Selecciona un tema</option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="soporte">Soporte técnico</option>
+                  <option value="facturacion">Facturación y pagos</option>
+                  <option value="sugerencia">Sugerencia</option>
+                  <option value="error">Reportar un error</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label form-label-required" for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" class="form-textarea" 
+                          rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              </div>
+              
+              <div class="form-check mb-4">
+                <input type="checkbox" id="acepto-privacidad" name="acepto-privacidad" 
+                       class="form-check-input" required>
+                <label for="acepto-privacidad" class="form-check-label">
+                  He leído y acepto la <a href="terminos.html#privacidad" target="_blank">política de privacidad</a>
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                <i class="fas fa-paper-plane"></i>
+                Enviar Mensaje
+              </button>
+              
+              <div class="alert alert-success mt-4" id="contact-success" style="display: none;">
+                <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="alert-content">
+                  <p class="alert-title">¡Mensaje enviado!</p>
+                  <p class="mb-0">Te responderemos lo antes posible. Revisa tu correo.</p>
+                </div>
+              </div>
+              
+              <div class="alert alert-error mt-4" id="contact-error" style="display: none;">
+                <div class="alert-icon"><i class="fas fa-exclamation-circle"></i></div>
+                <div class="alert-content">
+                  <p class="mb-0">Hubo un error al enviar el mensaje. Intenta de nuevo.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <!-- FAQ Quick Links -->
+        <div class="mt-6 text-center">
+          <h3 class="text-xl font-bold mb-3">¿Buscas respuestas rápidas?</h3>
+          <p class="text-muted mb-4">
+            Revisa nuestras preguntas frecuentes antes de contactarnos.
+          </p>
+          <a href="index.html#faq" class="btn btn-outline">
+            <i class="fas fa-question-circle"></i>
+            Ver Preguntas Frecuentes
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span>SimuPAES</span>
+          </div>
+          <p class="footer-description">Herramientas gratuitas para simular tu puntaje PAES.</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="simulador.html" class="footer-link">Simulador</a></li>
+            <li><a href="copiloto.html" class="footer-link">Copiloto</a></li>
+            <li><a href="herramientas.html" class="footer-link">Más</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html" class="footer-link">Términos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 SimuPAES. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

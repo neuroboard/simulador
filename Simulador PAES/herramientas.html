@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Herramientas PAES 2025: Calculadora NEM, Simulador Ranking, Buscador de Carreras y Universidades.">
+  <title>Herramientas - SimuPAES</title>
+  
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+          <span class="logo-text">Simu<span>PAES</span></span>
+        </a>
+        
+        <nav class="nav-main">
+          <a href="simulador.html" class="nav-link">Simulador</a>
+          <a href="copiloto.html" class="nav-link">Copiloto</a>
+          <div class="nav-dropdown">
+            <button class="nav-link nav-dropdown-toggle is-active">Herramientas <i class="fas fa-chevron-down"></i></button>
+            <div class="nav-dropdown-menu">
+              <a href="#calculadora-nem" class="nav-dropdown-item"><i class="fas fa-calculator"></i>Calculadora NEM</a>
+              <a href="#simulador-ranking" class="nav-dropdown-item"><i class="fas fa-chart-line"></i>Simulador Ranking</a>
+              <a href="#universidades" class="nav-dropdown-item"><i class="fas fa-university"></i>Universidades</a>
+              <a href="#carreras" class="nav-dropdown-item"><i class="fas fa-search"></i>Buscar Carreras</a>
+            </div>
+          </div>
+          <a href="planes.html" class="nav-link">Planes</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="login.html" class="btn btn-ghost">Iniciar Sesión</a>
+          <a href="register.html" class="btn btn-primary">Crear Cuenta</a>
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+        <span class="logo-text">Simu<span>PAES</span></span>
+      </a>
+      <button class="mobile-menu-close" id="menu-close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i>Inicio</a>
+      <a href="simulador.html" class="mobile-nav-link"><i class="fas fa-calculator"></i>Simulador</a>
+      <a href="copiloto.html" class="mobile-nav-link"><i class="fas fa-robot"></i>Copiloto</a>
+      <a href="herramientas.html" class="mobile-nav-link is-active"><i class="fas fa-tools"></i>Herramientas</a>
+      <a href="planes.html" class="mobile-nav-link"><i class="fas fa-crown"></i>Planes</a>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="login.html" class="btn btn-outline btn-block">Iniciar Sesión</a>
+      <a href="register.html" class="btn btn-primary btn-block">Crear Cuenta</a>
+    </div>
+  </div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Inicio</a>
+          <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+          <span class="breadcrumb-current">Herramientas</span>
+        </nav>
+        <h1 class="page-title">Herramientas</h1>
+        <p class="page-description">
+          Calculadoras y buscadores para planificar tu ingreso a la universidad.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Tools Content -->
+    <section class="section">
+      <div class="container">
+        <div class="tools-grid">
+          
+          <!-- Calculadora NEM -->
+          <div class="tool-card" id="calculadora-nem">
+            <div class="tool-card-header">
+              <h2 class="tool-card-title">
+                <i class="fas fa-percentage"></i>
+                Calculadora NEM
+              </h2>
+              <p class="tool-card-description">
+                Convierte tu promedio de notas de enseñanza media al puntaje NEM oficial.
+              </p>
+            </div>
+            <div class="tool-card-body">
+              <div class="form-group">
+                <label class="form-label form-label-required" for="promedio-notas">
+                  Promedio de Notas (1° a 4° Medio)
+                </label>
+                <input type="number" id="promedio-notas" class="form-input" 
+                       placeholder="Ej: 6.2" min="4.0" max="7.0" step="0.01">
+                <span class="form-hint">Ingresa tu promedio con decimales (ej: 6.25)</span>
+              </div>
+              
+              <button type="button" class="btn btn-primary btn-block" id="calc-nem-btn">
+                <i class="fas fa-calculator"></i>
+                Calcular NEM
+              </button>
+              
+              <div class="alert alert-success mt-4" id="nem-result" style="display: none;">
+                <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="alert-content">
+                  <p class="alert-title">Tu puntaje NEM es:</p>
+                  <p class="text-3xl font-bold mb-0" id="nem-score">---</p>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <p class="text-sm text-muted">
+                  <strong>¿Cómo funciona?</strong> El puntaje NEM se calcula usando la tabla oficial del DEMRE, 
+                  que convierte tu promedio de notas a una escala de 100 a 1000 puntos.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Simulador Ranking -->
+          <div class="tool-card" id="simulador-ranking">
+            <div class="tool-card-header">
+              <h2 class="tool-card-title">
+                <i class="fas fa-chart-line"></i>
+                Simulador Ranking
+              </h2>
+              <p class="tool-card-description">
+                Estima tu puntaje ranking basado en tu rendimiento y el promedio de tu colegio.
+              </p>
+            </div>
+            <div class="tool-card-body">
+              <div class="form-group">
+                <label class="form-label form-label-required" for="mi-nem">Tu Puntaje NEM</label>
+                <input type="number" id="mi-nem" class="form-input" 
+                       placeholder="Ej: 720" min="100" max="1000">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label form-label-required" for="promedio-colegio">
+                  Promedio NEM del Colegio (últimas 3 generaciones)
+                </label>
+                <input type="number" id="promedio-colegio" class="form-input" 
+                       placeholder="Ej: 650" min="100" max="1000">
+                <span class="form-hint">Si no lo sabes, usa un valor aproximado entre 550-700</span>
+              </div>
+              
+              <button type="button" class="btn btn-primary btn-block" id="calc-ranking-btn">
+                <i class="fas fa-chart-line"></i>
+                Calcular Ranking
+              </button>
+              
+              <div class="alert alert-success mt-4" id="ranking-result" style="display: none;">
+                <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="alert-content">
+                  <p class="alert-title">Tu puntaje Ranking estimado es:</p>
+                  <p class="text-3xl font-bold mb-0" id="ranking-score">---</p>
+                  <p class="text-sm text-muted mt-2" id="ranking-bonus">---</p>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <p class="text-sm text-muted">
+                  <strong>¿Cómo funciona?</strong> El ranking premia a estudiantes que superan el promedio 
+                  histórico de su establecimiento, pudiendo obtener hasta 150 puntos extra sobre su NEM.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Universidades -->
+        <div class="mt-6" id="universidades">
+          <h2 class="text-3xl font-bold mb-2">Universidades del Sistema</h2>
+          <p class="text-muted mb-5">Explora las universidades adscritas al sistema único de admisión.</p>
+          
+          <!-- Filtros -->
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label class="filter-label">Región</label>
+              <select class="form-select" id="filter-region">
+                <option value="">Todas las regiones</option>
+                <option value="rm">Región Metropolitana</option>
+                <option value="valparaiso">Valparaíso</option>
+                <option value="biobio">Biobío</option>
+                <option value="araucania">La Araucanía</option>
+                <option value="los-lagos">Los Lagos</option>
+                <option value="coquimbo">Coquimbo</option>
+                <option value="ohiggins">O'Higgins</option>
+                <option value="maule">Maule</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Tipo</label>
+              <select class="form-select" id="filter-tipo">
+                <option value="">Todos los tipos</option>
+                <option value="estatal">Estatales</option>
+                <option value="cruch">CRUCH Privadas</option>
+                <option value="privada">Privadas Adscritas</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Buscar</label>
+              <input type="text" class="form-input" id="filter-search" placeholder="Nombre universidad...">
+            </div>
+          </div>
+          
+          <div class="university-list" id="university-list">
+            <!-- Universidades se cargan dinámicamente -->
+          </div>
+          
+          <div class="text-center mt-4">
+            <button class="btn btn-outline" id="load-more-unis">
+              <i class="fas fa-plus"></i>
+              Cargar más universidades
+            </button>
+          </div>
+        </div>
+        
+        <!-- Buscador de Carreras -->
+        <div class="mt-6" id="carreras">
+          <h2 class="text-3xl font-bold mb-2">Buscador de Carreras</h2>
+          <p class="text-muted mb-5">Encuentra carreras por nombre, área o puntaje de corte.</p>
+          
+          <!-- Filtros Carreras -->
+          <div class="filter-bar">
+            <div class="filter-group" style="flex: 2;">
+              <label class="filter-label">Buscar carrera</label>
+              <input type="text" class="form-input" id="search-carrera" placeholder="Ej: Medicina, Ingeniería Civil...">
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Área</label>
+              <select class="form-select" id="filter-area">
+                <option value="">Todas las áreas</option>
+                <option value="salud">Salud</option>
+                <option value="ingenieria">Ingeniería y Tecnología</option>
+                <option value="ciencias">Ciencias</option>
+                <option value="humanidades">Humanidades</option>
+                <option value="cs-sociales">Ciencias Sociales</option>
+                <option value="derecho">Derecho</option>
+                <option value="educacion">Educación</option>
+                <option value="arte">Arte y Arquitectura</option>
+                <option value="agropecuaria">Agropecuaria</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Puntaje máximo</label>
+              <select class="form-select" id="filter-puntaje">
+                <option value="">Sin límite</option>
+                <option value="500">Hasta 500 pts</option>
+                <option value="600">Hasta 600 pts</option>
+                <option value="700">Hasta 700 pts</option>
+                <option value="800">Hasta 800 pts</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="table-wrapper">
+            <table class="table" id="careers-table">
+              <thead>
+                <tr>
+                  <th>Carrera</th>
+                  <th>Universidad</th>
+                  <th>Región</th>
+                  <th>Puntaje Corte</th>
+                  <th>Vacantes</th>
+                </tr>
+              </thead>
+              <tbody id="careers-tbody">
+                <!-- Carreras se cargan dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="text-center mt-4">
+            <button class="btn btn-outline" id="load-more-careers">
+              <i class="fas fa-plus"></i>
+              Cargar más carreras
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span>SimuPAES</span>
+          </div>
+          <p class="footer-description">Herramientas gratuitas para simular tu puntaje PAES.</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Herramientas</h4>
+          <ul class="footer-links">
+            <li><a href="simulador.html" class="footer-link">Simulador</a></li>
+            <li><a href="copiloto.html" class="footer-link">Copiloto</a></li>
+            <li><a href="herramientas.html" class="footer-link">Más</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-column-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terminos.html" class="footer-link">Términos</a></li>
+            <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 SimuPAES. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
+</body>
+</html>
